@@ -2,32 +2,77 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    Cool Title Up Here
-  </head>
-  <body>
-    <h1>Welcome to my website</h1>
-    <p>This is my webpage</p>
-    <p>This is a work in progress</p>
-    <h2>A little bit about me</h2>
-    <p>
-      Im a retired AirForce member. When I joined I was an avionics maintainer
-      on KC-135 airframe. I swapped over to IT after 5 years.
-    </p>
-    <p>
-      I started off as a programmer on Jovial working on AWACS airframe, moved
-      over to testing.
-    </p>
-    <p>
-      I then worked as a product owner and a project manager. With all my
-      experiences within the military I enjoyed programming the most
-    </p>
-    <p>I'm currently working to getting back into the programming field</p>
-
-    <button onclick="myFunction()">Learn How To Join The Air Force</button>
-    <p id="AFLink"></p>
     <script>
-      function myFunction() {
-        window.open("https://www.airforce.com");
+      var Animate_Timer;
+      var blue = 0;
+      var red = 0;
+      var green = 0;
+      function Animate() {
+        Animate_Timer = setInterval("AnimateH1()", 10);
+      }
+      function AnimateH1() {
+        var H1_Element = document.getElementById("Heading1");
+        H1_Element.style.color = getRGB();
+      }
+      function getRGB() {
+        if (blue == 255) {
+          red = red + 1;
+          green = green + 1;
+          if (red == 255 && green == 255) red = green = blue = 0;
+        } else {
+          blue = blue + 1;
+        }
+        return "rgb(" + red + "," + green + "," + blue + ")";
+      }
+    </script>
+  </head>
+  <body onload="Animate()">
+    <h1 id="Heading1">Welcome to my website</h1>
+    <p>This is my webpage</p>
+    <h2>A little bit about me</h2>
+    <div>
+      <p>
+        Im a retired AirForce member. When I joined I was an avionics maintainer
+        on KC-135 airframe. I swapped over to IT after 5 years.
+      </p>
+      <p>
+        I started off as a programmer on Jovial working on AWACS airframe, moved
+        over to testing.
+      </p>
+      <p>
+        I then worked as a product owner and a project manager. With all my
+        experiences within the military I enjoyed programming the most
+      </p>
+      <p>I'm currently working to getting back into the programming field</p>
+    </div>
+    <div id="funFactDiv" style="text-align: center">
+      Growing up I lived in Alaska. During the summer the sun would set after
+      midnight and rise around 3 am.
+      <img src="MidnightSun.jpg" alt="Sun is till up at midnight" />
+    </div>
+
+    <div style="text-align: center" ;>
+      <button onclick="funFactFunction()">Display Fun Fact About Me</button>
+    </div>
+
+    <div style="text-align: center">
+      <button onclick="myFunction()">Learn How To Join The Air Force</button>
+      <p id="AFLink"></p>
+      <script>
+        function myFunction() {
+          window.open("https://www.airforce.com");
+        }
+      </script>
+    </div>
+
+    <script>
+      function funFactFunction() {
+        var funFactDisplayed = document.getElementById("funFactDiv");
+        if (funFactDisplayed.style.display === "none") {
+          funFactDisplayed.style.display = "block";
+        } else {
+          funFactDisplayed.style.display = "none";
+        }
       }
     </script>
   </body>

@@ -1,18 +1,41 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #a9a9a9;
+  border-style: solid;
+  border-left-color: #8aaae5;
+  border-right-color: #8aaae5;
+  border-style: none solid none solid;
 }
 
 h1 {
-  color: #333;
+  color: #2d3e4e;
   font-size: 36px;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 p {
   color: #666;
+  background-color: #efefef;
   font-size: 18px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+div {
+  color: #666;
+  background-color: #efefef;
+  font-size: 18px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 h2 {
-  color: blue;
+  color: #2d3e4e;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#funFactDiv {
+  display: none;
 }
